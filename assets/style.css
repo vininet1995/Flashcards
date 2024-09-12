@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+:root {
+    --cor-fundo: #00f4bf;
+    --cor-texto-frente: green;
+    --cor-fundo-tema: white;
+    --cor-borda: blue;
+
+}
+
+body {
+    background: url(https://wallpapers.com/images/hd/universe-pictures-fi94jh9y6thxl3ji.jpg);
+    font-family: "Sofadi One", system-ui;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 3rem;
+}
+
+.cartao {
+    margin: 1rem 1rem;
+    background-color: var(--cor-fundo);
+    height: 20rem;
+    flex-grow: 1;
+    flex-basis: calc(33% - 6rem);
+    border-radius: 20px;
+    border: purple solid 3px;
+}
+
+.cartao__conteudo {
+    text-align: center;
+    /* background-color: aquamarine; */
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
+
+
+}
+
+.cartao__conteudo h3 {
+    color: var(--cor-texto-frente);
+    background-color: var(--cor-fundo);
+    text-align: left;
+    padding: 0.3rem;
+    position: absolute;
+    margin: 0.6rem;
+    margin-top: 0.1 rem;
+    border-radius: 0.6rem;
+    font-size: 1vw;
+    border: 1px solid var(--cor-borda);
+    backface-visibility: hidden;
+
+}
+
+.cartao__conteudo p {
+    margin-top: 1rem;
+    padding: 2rem;
+    margin-top: 4rem;
+    font-size: 1.3vw;
+}
+
+.cartao__conteudo__pergunta p {
+    color: var(--cor-borda);
+    font-weight: 500;
+}
+
+.cartao__conteudo__resposta p {
+
+    color: blueviolet;
+    font-weight: 700;
+
+}
+
+.cartao.active .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+}
+
+footer {
+    
+    
+    bottom: 0;
+    width: 100%;
+    }
+
+footer p {
+    text-align: center;
+    font-size: 2rem;
+    color: yellow;
+    font-weight: bold;
+}
+
+@media (max-width: 560px) {
+    .cartao {
+        flex: 1 0 calc(100% - 1rem);
+    }
+
+    .cartao__conteudo h3 {
+
+        font-size: 3vw;
+    }
+
+    .cartao__conteudo p {
+        font-size: 3.8vw;
+    }
+}
